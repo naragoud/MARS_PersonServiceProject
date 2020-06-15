@@ -22,14 +22,6 @@ public class PersonServiceImpl implements PersonService {
 	@Override
 	public void addPerson(Person person) {
 		logger.info("PersonServiceImpl : : addPerson(Person person : :" + person.toString());
-		/*Person personInfo= new Person();
-		personInfo.setFirstName(person.getFirstName());
-		personInfo.setLastName(person.getLastName());
-		personInfo.setPerson_id(person.getPerson_id());
-		personInfo.setAdress_Id(person.getAdress_Id());
-		personInfo.setAdress(person.getAdress());
-		logger.info("PersonServiceImpl : : addPerson(Person person : : person Inf Data" + person.toString());
-*/
         personRepo.save(person);
 		logger.info("PersonServiceImpl : : addPerson(Person person) Succesfull" );
 
@@ -53,18 +45,7 @@ public class PersonServiceImpl implements PersonService {
 
 	}
 
-	/*@Override
-	public Person getPerson(Long person_Id) {
-		//public Adress(long adressId, String street, String city, String state, String pinCode) 
-      Adress adress=new Adress(person_Id, "HitechCity", "Hyderabad", "Telangan", "500032");
-		
-		//public Person(int person_id, String firstName, String lastName, Adress adress) {
-
-		Person person= new Person((long) 1, "Balaji", "Goud", adress);
-
-		return person;
-	}*/
-
+	
 	@Override
 	public Person findByPersonId(Long person_Id) {
 		Optional<Person> optional  =personRepo.findById(person_Id);
